@@ -4,7 +4,8 @@
 #pragma warning(disable:4996)
 /*
     16947. 서울 지하철 2호선
-    BFS, DFS
+    BFS: 거리 카운트
+	DFS: 사이클 찾기
 */
 using namespace std;
 int N, check[3001], dist[3001];
