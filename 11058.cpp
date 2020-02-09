@@ -18,10 +18,6 @@ int main() {
 			dp[i] = max(dp[i], dp[i - (j + 2)] * (j + 1));
 		}
 	}
-	for (int i = 0; i < 102; i++) {
-		cout << dp[i] << " ";
-	}
-	cout << "\n";
 	cout << dp[N] << "\n";
 	return 0;
 }
