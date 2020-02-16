@@ -6,7 +6,7 @@
 #define INF 999999999
 /*
 	1916. 최소비용 구하기
-	인접행렬(벡터)
+	Dijkstra Algorithm 인접행렬(벡터)
 */
 using namespace std;
 int n, m, src, dst, dist[1001];
