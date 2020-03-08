@@ -3,10 +3,20 @@
 #include <algorithm>
 #include <cstring>
 #define INF 987654321
-#pragma warning(disable:4996)
 /*
 	1981. 배열에서 이동
 	BFS and Binary Search
+
+	배열을 입력받을 때 전체 숫자들의 max와 min을 구한다.
+	max-min이 곧 답의 범위이다. (0 <= X <= (max-min))
+	Binary Search로 그 범위 내에서의 최대-최소 차이를 찾는다.
+	mid값을 매개변수로 넘겨서, 그 숫자 내로 (1,1)에서 (N,N)으로 갈 수 있는지를 확인한다. (BFS)
+	만약 갈 수 있다면 (return true), 0 <= X <= mid 범위 안에 답이 있는 것이므로 right = mid - 1을 한다.
+	만약 갈 수 없다면 (return false), 그 차이 내로 갈 수 있는 경로가 없다는 것이므로
+	mid < X <= right 안에 있는 답을 찾기 위해 left = mid + 1을 한다.
+	BFS로 탐색하기 전, 배열의 숫자가 최대-최소 차이 조건에 부합하는지 확인한다.
+	각 경우에서 조건에 부합하는 숫자만으로 BFS로 경로를 탐색하고 (n,n)까지 갈 수 있는지 본다.
+	결과적으로 Binary Search가 끝났을 때의 mid(=rght+1)가 답이다.
 */
 using namespace std;
 bool visited[101][101];
